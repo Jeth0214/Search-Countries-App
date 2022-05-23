@@ -1,0 +1,36 @@
+<div class="container " *ngIf="country">
+    <button (click)="goBack()" class="btn btn-primary my-5"> Back </button>
+
+    <div class="row">
+        <div class="col-md-6">
+            <img data-src="country.flags.png" [src]="country.flags.png" [alt]="country.name">
+        </div>
+        <div class="col-6">
+            <h1>{{country.name}}</h1>
+            <div class="row">
+                <div class="col-5">
+                    <p> <span class="fw-bold">Native name: </span> {{ country.nativeName }}</p>
+                    <p> <span class="fw-bold">Population: </span> {{ country.population | number}}</p>
+                    <p> <span class="fw-bold">Region: </span> {{ country.region}}</p>
+                    <p> <span class="fw-bold">Sub Region: </span> {{ country.subregion }}</p>
+                    <p> <span class="fw-bold">Capital: </span> {{ country.capital }}</p>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-5">
+                    <p> <span class="fw-bold">Top Level Domain: </span> <span
+                            *ngFor="let domain of country.topLevelDomain">{{ domain }}</span></p>
+                    <p> <span class="fw-bold">Currencies: </span> <span *ngFor="let currency of country.currencies">{{
+                            currency.code }}</span></p>
+                    <p> <span class="fw-bold">Languages: </span> <span *ngFor="let language of country.languages">{{
+                            language.name }}</span> </p>
+                </div>
+            </div>
+
+            <div class="mt-5" *ngIf="country.borders">
+                <p class="fw-bold d-inline "> Border Countries: </p>
+                <button (click)="goToBorderCountry(border)" class="btn btn-light ms-3"
+                    *ngFor="let border of country.borders">{{ border }}</button>
+            </div>
+        </div>
+    </div>
+</div>

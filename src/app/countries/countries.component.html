@@ -1,0 +1,24 @@
+<div class="container" *ngIf="countries">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let country of countries">
+            <a (click)="goToCountry(country)">
+                <div class="card">
+                    <img data-src="country.flags.png" [src]="country.flags.png" class="card-img-top"
+                        [alt]="country.name">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ country.name }}</h5>
+                        <p class="card-text">
+                            <span class="fs-5 fw-bolder">Population: </span> {{ country.population | number }}
+                        </p>
+                        <p class="card-text">
+                            <span class="fs-5 fw-bolder">Region: </span> {{ country.region}}
+                        </p>
+                        <p class="card-text">
+                            <span class="fs-5 fw-bolder">Capital: </span> {{ country.capital }}
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

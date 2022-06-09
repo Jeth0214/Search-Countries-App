@@ -1,0 +1,19 @@
+<div class="my-5">
+    <div class="d-flex justify-content-between">
+        <div class="d-inline">
+            <input type="search" [formControl]="searchBox" class="form-control" id="searchBox">
+            <div class="list-group">
+                <a [routerLink]="'/countries/' + country.name" class="list-group-item list-group-item-action"
+                    *ngFor="let country of countries$ | async">
+                    {{ country.name }}
+                </a>
+            </div>
+        </div>
+        <div class="d-inline">
+            <select class="form-select" aria-label="filter countries by region" (change)='onFilter($event)'>
+                <option disabled selected hidden>Filtered by Region</option>
+                <option *ngFor=' let region of regions'>{{ region }}</option>
+            </select>
+        </div>
+    </div>
+</div>

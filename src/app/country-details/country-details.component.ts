@@ -12,7 +12,7 @@ import { Country } from '../models/country';
 })
 export class CountryDetailsComponent implements OnInit {
 
-  country: Country;
+  country: Country[];
 
   constructor(private activatedRoute: ActivatedRoute,
     private countriesService: CountriesService, private router: Router,
@@ -22,7 +22,7 @@ export class CountryDetailsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       let countryName = params.get('name');
       this.countriesService.getCountryByName(countryName).subscribe(data => {
-        this.country = data ? data[0] : null;
+        this.country = data ? data : [];
         // console.log(this.country);
       });
     })

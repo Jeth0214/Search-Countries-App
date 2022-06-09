@@ -8,13 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ThemeSwitchComponent } from './theme-switch/theme-switch.component';
+import { DARK_MODE_OPTIONS } from 'angular-dark-mode';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesComponent,
     CountryDetailsComponent,
-    SearchFilterComponent
+    SearchFilterComponent,
+    ThemeSwitchComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: DARK_MODE_OPTIONS,
+      useValue: {
+        storageKey: 'dark-mode'
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

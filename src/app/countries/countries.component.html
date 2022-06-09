@@ -1,4 +1,7 @@
-<div class="container" *ngIf="countries">
+<div class="container">
+
+    <app-search-filter (filter)="filterByRegion($event)"></app-search-filter>
+
     <div class="row">
         <div class="col-md-3" *ngFor="let country of countries">
             <a (click)="goToCountry(country)">

@@ -1,7 +1,7 @@
 <div class="container " *ngIf="country">
     <button (click)="goBack()" class="btn btn-primary my-5"> Back </button>
 
-    <div class="row">
+    <div class="row" *ngFor="let country of country">
         <div class="col-md-6">
             <img data-src="country.flags.png" [src]="country.flags.png" [alt]="country.name">
         </div>
@@ -20,7 +20,7 @@
                     <p> <span class="fw-bold">Top Level Domain: </span> <span
                             *ngFor="let domain of country.topLevelDomain">{{ domain }}</span></p>
                     <p> <span class="fw-bold">Currencies: </span> <span *ngFor="let currency of country.currencies">{{
-                            currency.code }}</span></p>
+                            currency.name }}</span></p>
                     <p> <span class="fw-bold">Languages: </span> <span *ngFor="let language of country.languages">{{
                             language.name }}</span> </p>
                 </div>

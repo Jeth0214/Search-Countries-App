@@ -10,6 +10,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThemeSwitchComponent } from './theme-switch/theme-switch.component';
 import { DARK_MODE_OPTIONS } from 'angular-dark-mode';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DARK_MODE_OPTIONS } from 'angular-dark-mode';
     CountriesComponent,
     CountryDetailsComponent,
     SearchFilterComponent,
-    ThemeSwitchComponent
+    ThemeSwitchComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

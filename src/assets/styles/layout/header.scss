@@ -1,0 +1,17 @@
+@use '../utilities/' as *;
+
+.header {
+    padding: rem(24) 0;
+
+    h1 {
+        font-size: clamp(0.8rem, 1vw + 0.8rem, 1.5rem);
+    }
+
+    &--darkmode {
+        background-color: hsl(var(--clr-dark-mode-elements));
+    }
+
+    &--lightmode {
+        background-color: hsl(var(--clr-white));
+    }
+}

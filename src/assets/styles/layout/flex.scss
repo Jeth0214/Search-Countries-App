@@ -1,0 +1,14 @@
+@use '../utilities/' as *;
+
+.d-flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items {
+    align-items: center;
+}

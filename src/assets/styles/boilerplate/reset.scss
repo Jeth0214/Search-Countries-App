@@ -1,0 +1,98 @@
+@use '../utilities/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+// Box sizing 
+*,
+*::before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* reset margins  */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+    margin: 0
+}
+
+/*  set up the body  */
+body {
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: var(--ff-nunito);
+}
+
+body:not(.dark-mode-preloading) {
+    transition: all 0.3s linear;
+}
+
+body.dark-mode {
+    background-color: hsl(var(--clr-dark-mode-bg));
+    color: hsl(var(--clr-white));
+}
+
+body.light-mode {
+    background-color: hsl(var(--clr-light-mode-bg));
+    color: hsl(var(--clr-light-mode-txt));
+}
+
+/* images */
+img,
+picture {
+    max-width: 100%;
+}
+
+/* list  */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+/* links */
+a,
+a:visited {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* button */
+button {
+    font: inherit;
+}
+
+/* remove animations for people who turned it off*/
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::after,
+    *::before {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+// show for screen readers only
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    ;
+}

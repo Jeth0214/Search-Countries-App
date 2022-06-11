@@ -16,7 +16,7 @@ export class ThemeSwitchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onToggle(): void {
-    this.darkModeService.toggle()
+  onSwitchTheme(): void {
+    this.darkModeService.toggle();
   }
 }

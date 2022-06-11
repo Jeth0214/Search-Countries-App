@@ -28,6 +28,8 @@ body {
     min-height: 100vh;
     font-size: 16px;
     font-family: var(--ff-nunito);
+    background-color: var(--bg-body-color);
+    color: var(--text-color);
 }
 
 body:not(.dark-mode-preloading) {
@@ -35,13 +37,17 @@ body:not(.dark-mode-preloading) {
 }
 
 body.dark-mode {
-    background-color: hsl(var(--clr-dark-mode-bg));
-    color: hsl(var(--clr-white));
+    // background-color: hsl(var(--clr-dark-mode-bg));
+    // color: hsl(var(--clr-white));
+    --text-color: hsl(0, 0%, 100%);
+    --bg-body-color: hsl(207, 26%, 17%);
+    --bg-element-color: hsl(209, 23%, 22%);
 }
 
 body.light-mode {
-    background-color: hsl(var(--clr-light-mode-bg));
-    color: hsl(var(--clr-light-mode-txt));
+    --text-color: hsl(200, 15%, 8%);
+    --bg-body-color: hsl(0, 0%, 98%);
+    --light-mode-input: hsl(0, 0%, 52%);
 }
 
 /* images */

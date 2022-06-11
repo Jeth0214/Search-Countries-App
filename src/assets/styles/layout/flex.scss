@@ -5,8 +5,14 @@
     gap: 1rem;
 }
 
-.justify-content-between {
+.justify-between {
     justify-content: space-between;
+}
+
+.justify-between--md {
+    @include breakpoint-up('medium') {
+        justify-content: space-between;
+    }
 }
 
 .align-items {

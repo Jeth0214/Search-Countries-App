@@ -33,21 +33,25 @@ body {
 }
 
 body:not(.dark-mode-preloading) {
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
 }
 
 body.dark-mode {
-    // background-color: hsl(var(--clr-dark-mode-bg));
-    // color: hsl(var(--clr-white));
     --text-color: hsl(0, 0%, 100%);
     --bg-body-color: hsl(207, 26%, 17%);
     --bg-element-color: hsl(209, 23%, 22%);
+    --light-mode-input: hsl(0, 0%, 100%);
+    --search-icon: url('../../images/search-dark.svg');
+    --filter-icon: url('../../images/arrow-down-dark.svg');
 }
 
 body.light-mode {
     --text-color: hsl(200, 15%, 8%);
     --bg-body-color: hsl(0, 0%, 98%);
+    --bg-element-color: hsl(0, 0%, 100%);
     --light-mode-input: hsl(0, 0%, 52%);
+    --search-icon: url('../../images/search-light.svg');
+    --filter-icon: url('../../images/arrow-down-light.svg');
 }
 
 /* images */

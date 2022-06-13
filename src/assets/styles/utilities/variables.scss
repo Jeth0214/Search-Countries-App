@@ -1,0 +1,32 @@
+:root {
+    /* COLORS */
+    // Dark Mode
+    --clr-dark-mode-elements: 209, 23%, 22%;
+    --clr-dark-mode-bg: 207, 26%, 17%;
+
+    // Light Mode
+    --clr-light-mode-txt: 200, 15%, 8%;
+    --clr-light-mode-bg: 0, 0%, 98%;
+    --clr-light-mode-input: 0, 0%, 52%;
+
+    // neutral
+    --clr-white: 0 0% 100%;
+
+    /*  Typography */
+
+    // font-family
+    --ff-nunito: 'Nunito Sans', sans-serif;
+
+    //font-size
+    --fs-900: 5rem;
+    --fs-800: 2.5rem;
+    --fs-600: 1.75rem;
+    --fs-400: 0.875rem;
+    --fs-300: 0.75rem;
+    --fs-200: 0.6875rem;
+
+    //font-weight
+    --fw-800: 800;
+    --fw-600: 600;
+    --fw-300: 300;
+}

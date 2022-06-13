@@ -1,0 +1,6 @@
+@use '../utilities/' as *;
+
+.container {
+    width: min(90%, rem(1280));
+    margin-inline: auto;
+}

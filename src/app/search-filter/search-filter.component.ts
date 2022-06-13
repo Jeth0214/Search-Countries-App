@@ -15,24 +15,32 @@ export class SearchFilterComponent implements OnInit {
   @Output() filter = new EventEmitter<string>();
 
   regions: string[] = REGIONS;
-  countries$!: Observable<Country[]>;
   foundCountry: boolean = false;
+  countries$!: Observable<Country[]>;
   searchBox: FormControl = new FormControl('');
+  showList: boolean = false;
+  results;
 
   private searcTerms = new Subject<string>();
-
 
   constructor(private countryService: CountriesService) { }
 
   ngOnInit(): void {
     this.countries$ = this.searchBox.valueChanges.pipe(
       map(search => search.trim()),
-      debounceTime(300),
+      debounceTime(200),
       distinctUntilChanged(),
       switchMap((term: string) => this.countryService.getCountryByName(term).pipe(
         retry(3),
         startWith([])
       )),
+
+    )
+    this.countries$.subscribe(results => {
+      this.results = results
+      this.showList = results.length > 0 ? true : false;
+      console.log(this.showList)
+    }
     )
   }
 

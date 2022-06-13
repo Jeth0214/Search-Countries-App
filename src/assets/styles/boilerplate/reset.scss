@@ -2,6 +2,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
+// custom properties for dark and light mode
+
+body.dark-mode {
+    --text-color: hsl(0, 0%, 100%);
+    --bg-body-color: hsl(207, 26%, 17%);
+    --bg-element-color: hsl(209, 23%, 22%);
+    --light-mode-input: hsl(0, 0%, 100%);
+    --search-icon: url('../../images/search-dark.svg');
+    --filter-icon: url('../../images/arrow-down-dark.svg');
+}
+
+body.light-mode {
+    --text-color: hsl(200, 15%, 8%);
+    --bg-body-color: hsl(0, 0%, 98%);
+    --bg-element-color: hsl(0, 0%, 100%);
+    --light-mode-input: hsl(0, 0%, 52%);
+    --search-icon: url('../../images/search-light.svg');
+    --filter-icon: url('../../images/arrow-down-light.svg');
+}
+
+
 // Box sizing 
 *,
 *::before,
@@ -36,23 +57,7 @@ body:not(.dark-mode-preloading) {
     transition: all 0.2s linear;
 }
 
-body.dark-mode {
-    --text-color: hsl(0, 0%, 100%);
-    --bg-body-color: hsl(207, 26%, 17%);
-    --bg-element-color: hsl(209, 23%, 22%);
-    --light-mode-input: hsl(0, 0%, 100%);
-    --search-icon: url('../../images/search-dark.svg');
-    --filter-icon: url('../../images/arrow-down-dark.svg');
-}
 
-body.light-mode {
-    --text-color: hsl(200, 15%, 8%);
-    --bg-body-color: hsl(0, 0%, 98%);
-    --bg-element-color: hsl(0, 0%, 100%);
-    --light-mode-input: hsl(0, 0%, 52%);
-    --search-icon: url('../../images/search-light.svg');
-    --filter-icon: url('../../images/arrow-down-light.svg');
-}
 
 /* images */
 img,
@@ -72,6 +77,7 @@ a,
 a:visited {
     cursor: pointer;
     text-decoration: none;
+    color: inherit;
 }
 
 /* button */

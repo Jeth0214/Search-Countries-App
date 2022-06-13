@@ -2,12 +2,19 @@
     <div class="search">
         <input type="search" [formControl]="searchBox" class="form-control box-shadow" id="searchBox"
             placeholder="Search for a country...">
-        <div class="list-group">
+        <!-- <div class="list-group">
             <a [routerLink]="'/countries/' + country.name" class="list-group-item list-group-item-action"
                 *ngFor="let country of countries$ | async">
                 {{ country.name }}
             </a>
-        </div>
+        </div> -->
+        <ul class="list-group" *ngIf="showList">
+            <li class="list-group-item" *ngFor="let country of results">
+                <a [routerLink]="'/countries/' + country.name">
+                    {{ country.name }}
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="filter ">
         <i class="fa-solid fa-angle-down"></i>

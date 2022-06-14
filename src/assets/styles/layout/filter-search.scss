@@ -22,6 +22,8 @@
             right: 0;
             left: 0;
             z-index: 3;
+            max-width: rem(480);
+            height: rem(144);
         }
     }
 
@@ -29,10 +31,11 @@
         position: relative;
         width: 200px;
 
-        i {
-            position: absolute;
-            right: 19px;
-            top: 34%;
-        }
+        // i {
+        //     position: absolute;
+        //     right: 19px;
+        //     top: 34%;
+        //     background-color: var(--bg-element-color);
+        // }
     }
 }

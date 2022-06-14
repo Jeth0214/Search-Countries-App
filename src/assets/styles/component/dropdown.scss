@@ -1,0 +1,23 @@
+@use '../utilities/' as *;
+
+.dropdown {
+    .btn {
+        background-color: var(--bg-element-color);
+        padding: 14px 20px;
+        border: none;
+        color: var(--light-mode-input);
+        font-size: 12px;
+        border-radius: 5px;
+        width: 200px;
+        cursor: pointer;
+        transition: background-color 0.2ms linear;
+
+        &:hover {
+            background-color: var(--bg-body-color);
+        }
+
+        i {
+            margin-left: rem(62);
+        }
+    }
+}

@@ -18,6 +18,7 @@
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     outline: none;
+    cursor: pointer;
 
     &::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -45,11 +46,10 @@ input[type=search] {
 }
 
 select {
-    background-color: var(--bg-element-color);
-    color: var(--light-mode-input);
-    border: none;
     padding: rem(15) rem(32);
-    font-size: rem(12);
-    font-family: var(--ff-nunito);
-    font-weight: 400;
+
+    option {
+        margin-top: rem(5);
+        border-radius: 0.25rem;
+    }
 }

@@ -40,6 +40,7 @@ export class SearchFilterComponent implements OnInit {
       this.results = results
       this.showList = results.length > 0 ? true : false;
       console.log(this.showList)
+      console.log(this.results)
     }
     )
   }

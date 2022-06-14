@@ -1,3 +1,11 @@
 <div class="dropdown">
-    <button class="btn box-shadow"> Filter By Region <i class="fa-solid fa-angle-down"></i> </button>
+    <button class="btn box-shadow" (click)="onDrop()" (blur)="onBlurDrop()"> Filter By Region <i
+            [ngClass]="showDropLists ? 'fa-angle-up' : 'fa-angle-down'" class="fa-solid "></i>
+    </button>
+
+    <ul class="list-group" *ngIf="showDropLists">
+        <li class="list-group-item" *ngFor="let region of regions" (click)="onFilter(region)">
+            {{ region }}
+        </li>
+    </ul>
 </div>

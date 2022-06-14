@@ -2,27 +2,21 @@
     <div class="search">
         <input type="search" [formControl]="searchBox" class="form-control box-shadow" id="searchBox"
             placeholder="Search for a country...">
-        <!-- <div class="list-group">
-            <a [routerLink]="'/countries/' + country.name" class="list-group-item list-group-item-action"
-                *ngFor="let country of countries$ | async">
+        <div class="list-group" *ngIf="showList">
+            <a [routerLink]="'/countries/' + country.name" class="list-group-item" *ngFor="let country of results">
                 {{ country.name }}
             </a>
-        </div> -->
-        <ul class="list-group" *ngIf="showList">
+        </div>
+        <!-- <ul class="list-group" *ngIf="showList">
             <li class="list-group-item" *ngFor="let country of results">
                 <a [routerLink]="'/countries/' + country.name">
                     {{ country.name }}
                 </a>
             </li>
-        </ul>
+        </ul> -->
     </div>
     <div class="filter ">
-        <i class="fa-solid fa-angle-down"></i>
-        <select class="form-control box-shadow" aria-label="filter countries by region" (change)='onFilter($event)'>
-
-            <option disabled selected hidden>Filtered by Region</option>
-            <option *ngFor=' let region of regions'>{{ region }}</option>
-        </select>
+        <app-dropdown></app-dropdown>
     </div>
 
 </div>

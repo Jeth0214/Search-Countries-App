@@ -45,8 +45,7 @@ export class SearchFilterComponent implements OnInit {
     )
   }
 
-  onFilter(e) {
-    let region = e.target.value;
+  onFilter(region) {
     this.filter.emit(region);
   }
 

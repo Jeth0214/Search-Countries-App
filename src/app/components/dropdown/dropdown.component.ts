@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-const REGIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
 
 @Component({
   selector: 'app-dropdown',
@@ -8,10 +7,12 @@ const REGIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
   styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent implements OnInit {
+  @Input() regions: string[];
+  @Output() region = new EventEmitter<string>();
 
   showDropLists: boolean = false;
-  regions: string[] = REGIONS;
-  region: string;
+  dropDownTitle = 'Filter By Region'
+
 
   constructor() { }
 
@@ -29,8 +30,9 @@ export class DropdownComponent implements OnInit {
   }
 
   onFilter(region) {
-    console.log(region);
     this.showDropLists = false;
+    this.region.emit(region)
+    this.dropDownTitle = region
   }
 
 }

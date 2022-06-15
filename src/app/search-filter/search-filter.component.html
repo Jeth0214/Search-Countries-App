@@ -16,7 +16,7 @@
         </ul> -->
     </div>
     <div class="filter ">
-        <app-dropdown></app-dropdown>
+        <app-dropdown [regions]="regions" (region)="onFilter($event)"></app-dropdown>
     </div>
 
 </div>

@@ -7,13 +7,6 @@
                 {{ country.name }}
             </a>
         </div>
-        <!-- <ul class="list-group" *ngIf="showList">
-            <li class="list-group-item" *ngFor="let country of results">
-                <a [routerLink]="'/countries/' + country.name">
-                    {{ country.name }}
-                </a>
-            </li>
-        </ul> -->
     </div>
     <div class="filter ">
         <app-dropdown [regions]="regions" (region)="onFilter($event)"></app-dropdown>

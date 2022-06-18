@@ -3,16 +3,15 @@ import { CommonModule } from '@angular/common';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
 
-
 @NgModule({
   declarations: [
-    DropdownComponent
+    DropdownComponent,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    DropdownComponent
+    DropdownComponent,
   ]
 })
 export class ComponentsModule { }

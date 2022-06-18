@@ -13,6 +13,7 @@ import { Country } from '../models/country';
 export class CountryDetailsComponent implements OnInit {
 
   country: Country[];
+  borders;
 
   constructor(private activatedRoute: ActivatedRoute,
     private countriesService: CountriesService, private router: Router,
@@ -21,14 +22,16 @@ export class CountryDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
       let countryName = params.get('name');
-      this.countriesService.getCountryByName(countryName).subscribe(data => {
+      this.countriesService.getCountryByFullName(countryName).subscribe(data => {
         this.country = data ? data : [];
+        let bordersFromCounty = this.country[0].borders.join(',');
+        this.countriesService.getCountryByAlphaCode(bordersFromCounty).subscribe(borderCountries => {
+          this.borders = borderCountries ? borderCountries : [];
+          //console.log(this.borders)
+        })
         // console.log(this.country);
       });
     })
-    // const countryName = this.activatedRoute.snapshot.paramMap.get('name');
-    // console.log(countryName)
-
   }
 
   goBack() {

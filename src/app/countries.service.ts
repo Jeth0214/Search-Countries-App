@@ -25,8 +25,17 @@ export class CountriesService {
     );
   }
 
+  getCountryByFullName(name: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.baseURL}/name/${name}?fullText=true`).pipe(
+      catchError(error => {
+        console.log('Error', error)
+        return of([])
+      })
+    );
+  }
+
   getCountryByAlphaCode(code: string): Observable<Country> {
-    return this.http.get<Country>(`${this.baseURL}/alpha/${code}`);
+    return this.http.get<Country>(`${this.baseURL}/alpha?codes=${code}`);
   }
 
   getCountriesByRegion(region): Observable<Country[]> {

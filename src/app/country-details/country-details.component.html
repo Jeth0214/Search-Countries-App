@@ -1,5 +1,5 @@
 <div class="container " *ngIf="country">
-    <button (click)="goBack()" class="btn btn-primary my-5"> Back </button>
+    <button (click)="goBack()" class="btn btn-md"> <i class="fa-solid icon-left fa-arrow-left-long"></i> Back </button>
 
     <div class="row" *ngFor="let country of country">
         <div class="col-md-6">
@@ -26,10 +26,11 @@
                 </div>
             </div>
 
-            <div class="mt-5" *ngIf="country.borders">
+            <div class="mt-5" *ngIf="borders.length > 0">
                 <p class="fw-bold d-inline "> Border Countries: </p>
-                <button (click)="goToBorderCountry(border)" class="btn btn-light ms-3"
-                    *ngFor="let border of country.borders">{{ border }}</button>
+                <button [routerLink]="'/countries/' + border.name" class="btn btn-light ms-3"
+                    *ngFor="let border of borders">{{
+                    border.name }}</button>
             </div>
         </div>
     </div>

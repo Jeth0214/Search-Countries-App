@@ -16,7 +16,6 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCountries();
-
   }
 
   getCountries() {

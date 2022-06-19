@@ -1,7 +1,7 @@
 @use '../utilities/' as *;
 
 .search-filter {
-    margin-bottom: rem(1000);
+    margin-bottom: rem(48);
 
     @include breakpoint-up('medium') {
         display: flex;

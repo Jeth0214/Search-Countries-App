@@ -1,0 +1,18 @@
+@use '../utilities/' as *;
+
+.row {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint-up('medium') {
+        justify-content: space-between;
+    }
+}
+
+.card {
+    height: rem(336);
+    width: rem(264);
+    margin-bottom: rem(40);
+    background-color: var(--bg-element-color);
+}

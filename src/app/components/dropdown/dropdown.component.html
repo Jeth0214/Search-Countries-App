@@ -3,7 +3,7 @@
             [ngClass]="showDropLists ? 'fa-angle-up' : 'fa-angle-down'" class="fa-solid icon-right"></i>
     </button>
 
-    <ul class="list-group" *ngIf="showDropLists">
+    <ul class="list-group list-group--dropdown" *ngIf="showDropLists">
         <li class="list-group-item" *ngFor="let region of regions" (click)="onFilter(region)">
             {{ region }}
         </li>

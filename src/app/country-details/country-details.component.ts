@@ -24,12 +24,15 @@ export class CountryDetailsComponent implements OnInit {
       let countryName = params.get('name');
       this.countriesService.getCountryByFullName(countryName).subscribe(data => {
         this.country = data ? data : [];
-        let bordersFromCounty = this.country[0].borders.join(',');
-        this.countriesService.getCountryByAlphaCode(bordersFromCounty).subscribe(borderCountries => {
-          this.borders = borderCountries ? borderCountries : [];
-          //console.log(this.borders)
-        })
-        // console.log(this.country);
+        if (this.country[0].borders) {
+
+          let bordersFromCounty = this.country[0].borders.join(',');
+          this.countriesService.getCountryByAlphaCode(bordersFromCounty).subscribe(borderCountries => {
+            this.borders = borderCountries ? borderCountries : [];
+            //console.log(this.borders)
+          })
+        }
+        console.log(this.country);
       });
     })
   }

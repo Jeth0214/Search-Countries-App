@@ -1,5 +1,19 @@
+@use '../utilities/' as *;
+
 .dropdown {
+    position: relative;
+    width: rem(200);
+
     .btn {
-        width: rem(200);
+        width: 100%;
+        position: relative;
+        text-align: left;
+
+        i {
+            position: absolute;
+            right: rem(20);
+            top: 15px
+        }
     }
+
 }

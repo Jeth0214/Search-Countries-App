@@ -16,15 +16,6 @@
         @include breakpoint-up('medium') {
             margin-bottom: 0;
         }
-
-        .list-group {
-            position: absolute;
-            right: 0;
-            left: 0;
-            z-index: 3;
-            max-width: rem(480);
-            height: rem(144);
-        }
     }
 
     .filter {

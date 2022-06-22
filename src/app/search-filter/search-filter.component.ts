@@ -8,8 +8,7 @@ const REGIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
 
 @Component({
   selector: 'app-search-filter',
-  templateUrl: './search-filter.component.html',
-  styleUrls: ['./search-filter.component.scss']
+  templateUrl: './search-filter.component.html'
 })
 export class SearchFilterComponent implements OnInit {
   @Output() filter = new EventEmitter<string>();

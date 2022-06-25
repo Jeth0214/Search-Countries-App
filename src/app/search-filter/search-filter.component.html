@@ -1,12 +1,6 @@
 <div class="search-filter">
     <div class="search">
-        <input type="search" [formControl]="searchBox" class="form-control box-shadow" id="searchBox"
-            placeholder="Search for a country...">
-        <div class="list-group list-group--dropdown" *ngIf="showList">
-            <a [routerLink]="'/countries/' + country.name" class="list-group-item" *ngFor="let country of results">
-                {{ country.name }}
-            </a>
-        </div>
+        <app-search-box></app-search-box>
     </div>
     <div class="filter ">
         <app-dropdown [regions]="regions" (region)="onFilter($event)"></app-dropdown>

@@ -1,0 +1,11 @@
+@use '../utilities/' as *;
+
+.toggle {
+    display: none;
+
+    .toggle__label {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+}

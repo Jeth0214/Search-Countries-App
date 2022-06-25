@@ -1,53 +1,60 @@
 <div class="container">
     <button (click)="goBack()" class="btn btn-md"> <i class="fa-solid icon-left fa-arrow-left-long"></i> Back </button>
 
-    <div class="country" *ngIf="country">
-        <ng-container *ngFor="let country of country">
+    <div class="country">
+        <ngx-spinner bdColor="var(--bg-element-color)" size="large" color="#000" type="ball-scale-multiple"
+            [fullScreen]="false">
+            <p style="font-size: 20px; color:#000">Loading {{countryToBeLoad}} details...</p>
+        </ngx-spinner>
+        <ng-container *ngIf="country">
 
-            <div class="country__flag">
-                <img data-src="country.flags.png" [src]="country.flags.png" [alt]="country.name">
-            </div>
-            <div class="country__details">
-                <h1 class="fw-800 country__name">{{country.name}}</h1>
-                <div class="d-flex justify-between--md">
-                    <div class="col-5">
-                        <p> <span class="fw-600">Native name: </span> {{ country.nativeName }}</p>
-                        <p> <span class="fw-600">Population: </span> {{ country.population | number}}</p>
-                        <p> <span class="fw-600">Region: </span> {{ country.region}}</p>
-                        <p> <span class="fw-600">Sub Region: </span> {{ country.subregion }}</p>
-                        <p> <span class="fw-600">Capital: </span> {{ country.capital }}</p>
+            <ng-container *ngFor="let country of country">
+
+                <div class="country__flag">
+                    <img data-src="country.flags.png" [src]="country.flags.png" [alt]="country.name">
+                </div>
+                <div class="country__details">
+                    <h1 class="fw-800 country__name">{{country.name}}</h1>
+                    <div class="d-flex justify-between--md">
+                        <div class="col-5">
+                            <p> <span class="fw-600">Native name: </span> {{ country.nativeName }}</p>
+                            <p> <span class="fw-600">Population: </span> {{ country.population | number}}</p>
+                            <p> <span class="fw-600">Region: </span> {{ country.region}}</p>
+                            <p> <span class="fw-600">Sub Region: </span> {{ country.subregion }}</p>
+                            <p> <span class="fw-600">Capital: </span> {{ country.capital }}</p>
+                        </div>
+                        <div class="col-5">
+                            <p>
+                                <span class="fw-600">Top Level Domain: </span>
+                                <span *ngFor="let domain of country.topLevelDomain">
+                                    {{ domain }}
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fw-600">Currencies: </span>
+                                <span *ngFor="let currency of country.currencies">
+                                    {{
+                                    currency.name }}
+                                </span>
+                            </p>
+                            <p>
+                                <span class="fw-600">Languages: </span>
+                                <span class="country__languages" *ngFor="let language of country.languages">
+                                    {{
+                                    language.name }}
+                                </span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-5">
-                        <p>
-                            <span class="fw-600">Top Level Domain: </span>
-                            <span *ngFor="let domain of country.topLevelDomain">
-                                {{ domain }}
-                            </span>
-                        </p>
-                        <p>
-                            <span class="fw-600">Currencies: </span>
-                            <span *ngFor="let currency of country.currencies">
-                                {{
-                                currency.name }}
-                            </span>
-                        </p>
-                        <p>
-                            <span class="fw-600">Languages: </span>
-                            <span class="country__languages" *ngFor="let language of country.languages">
-                                {{
-                                language.name }}
-                            </span>
-                        </p>
+
+                    <div class="country__borders" *ngIf="borders">
+                        <p class="fw-600 d-inline "> Border Countries: </p>
+                        <button [routerLink]="'/countries/' + border.name" class="btn box-shadow"
+                            *ngFor="let border of borders">{{
+                            border.name }}</button>
                     </div>
                 </div>
-
-                <div class="country__borders" *ngIf="borders">
-                    <p class="fw-600 d-inline "> Border Countries: </p>
-                    <button [routerLink]="'/countries/' + border.name" class="btn box-shadow"
-                        *ngFor="let border of borders">{{
-                        border.name }}</button>
-                </div>
-            </div>
+            </ng-container>
         </ng-container>
     </div>
 </div>

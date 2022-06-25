@@ -2,8 +2,10 @@
 
 .country {
     margin: rem(64) 0;
+    position: relative;
+    min-height: rem(500);
 
-    @include breakpoint-up('medium') {
+    @include breakpoint-up('large') {
         margin: rem(80) 0;
         display: flex;
         justify-content: space-between;

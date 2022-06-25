@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class DropdownComponent implements OnInit {
   dropDownTitle = 'Filter By Region'
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,9 +30,21 @@ export class DropdownComponent implements OnInit {
   }
 
   onFilter(region) {
+    if (region === 'All Countries') {
+      this.regions.pop();
+      this.dropDownTitle = 'Filter By Region';
+    }
+    else {
+      if (this.regions.indexOf('All Countries') === -1) {
+
+        this.regions.push('All Countries');
+        this.dropDownTitle = region
+      }
+    }
     this.showDropLists = false;
     this.region.emit(region)
-    this.dropDownTitle = region
+
+
   }
 
 }

@@ -15,6 +15,7 @@ export class CountryDetailsComponent implements OnInit {
   country: Country[];
   borders;
   countryToBeLoad;
+  noFoundCountry = false;
 
   constructor(private activatedRoute: ActivatedRoute,
     private countriesService: CountriesService, private router: Router,
@@ -30,8 +31,8 @@ export class CountryDetailsComponent implements OnInit {
       this.countryToBeLoad = countryName;
       this.spinner.show();
       this.countriesService.getCountryByFullName(countryName).subscribe(data => {
-        if (data) {
-          this.spinner.hide()
+        this.spinner.hide();
+        if (data.length > 0) {
           this.country = data ? data : [];
           if (this.country[0].borders) {
 
@@ -41,7 +42,10 @@ export class CountryDetailsComponent implements OnInit {
               //console.log(this.borders)
             })
           }
+        } else {
+          this.noFoundCountry = true;
         }
+        console.log(this.noFoundCountry);
         // console.log(this.country);
       });
     })

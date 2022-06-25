@@ -3,6 +3,8 @@
 .cards {
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    min-height: 500px;
 
     @include breakpoint-up('medium') {
         justify-content: space-between;
@@ -16,6 +18,12 @@
     background-color: var(--bg-element-color);
     border-radius: 5px;
     overflow: hidden;
+    transition: box-shadow .4s ease-in;
+    -webkit-transition: box-shadow .4s ease-in;
+
+    &:hover {
+        box-shadow: 1px 8px 20px grey;
+    }
 
     .card__image {
         width: 100%;

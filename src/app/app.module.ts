@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,11 +7,11 @@ import { CountriesComponent } from './countries/countries.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ThemeSwitchComponent } from './theme-switch/theme-switch.component';
 import { DARK_MODE_OPTIONS } from 'angular-dark-mode';
 import { HeaderComponent } from './header/header.component';
 import { ComponentsModule } from './components/components.module';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -19,16 +19,15 @@ import { ComponentsModule } from './components/components.module';
     CountriesComponent,
     CountryDetailsComponent,
     SearchFilterComponent,
-    ThemeSwitchComponent,
     HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ComponentsModule
+    ComponentsModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
@@ -38,6 +37,7 @@ import { ComponentsModule } from './components/components.module';
       }
     }
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

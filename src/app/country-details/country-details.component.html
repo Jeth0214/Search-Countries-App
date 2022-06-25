@@ -2,7 +2,7 @@
     <button (click)="goBack()" class="btn btn-md"> <i class="fa-solid icon-left fa-arrow-left-long"></i> Back </button>
 
     <div class="country">
-        <ngx-spinner *ngIf="!country" bdColor="var(--bg-element-color)" size="large" color="#000" type="ball-spin"
+        <ngx-spinner *ngIf="!country" bdColor="var(--bg-element-color)" size="medium" color="#000" type="ball-spin"
             [fullScreen]="false" [style.display]="noFoundCountry ? 'none' : 'block'" style="min-height: 500px;">
             <p style="font-size: 20px; color:#000">Loading {{countryToBeLoad}} details...</p>
         </ngx-spinner>

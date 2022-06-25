@@ -5,8 +5,8 @@
 
     <div class="d-flex cards">
         <!-- spinner -->
-        <ng-container *ngIf="showSpinner">
-            <ngx-spinner bdColor="var(--bg-element-color)" size="large" color="#000" type="ball-scale-multiple"
+        <ng-container *ngIf="!countries">
+            <ngx-spinner bdColor="var(--bg-element-color)" size="large" color="#000" type="ball-spin"
                 [fullScreen]="false">
                 <p style="font-size: 20px; color:#000">Loading Countries...</p>
             </ngx-spinner>

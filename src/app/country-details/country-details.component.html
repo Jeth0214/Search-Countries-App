@@ -2,8 +2,8 @@
     <button (click)="goBack()" class="btn btn-md"> <i class="fa-solid icon-left fa-arrow-left-long"></i> Back </button>
 
     <div class="country">
-        <ngx-spinner bdColor="var(--bg-element-color)" size="large" color="#000" type="ball-scale-multiple"
-            [fullScreen]="false">
+        <ngx-spinner *ngIf="!country" bdColor="var(--bg-element-color)" size="large" color="#000" type="ball-spin"
+            [fullScreen]="false" [style.display]="noFoundCountry ? 'none' : 'block'" style="min-height: 500px;">
             <p style="font-size: 20px; color:#000">Loading {{countryToBeLoad}} details...</p>
         </ngx-spinner>
         <ng-container *ngIf="country">
@@ -56,5 +56,12 @@
                 </div>
             </ng-container>
         </ng-container>
+
+    </div>
+    <div class="country--nofound" *ngIf="noFoundCountry">
+        <img class="country--nofound__image" src="../../assets/images/no-found.svg.png">
+        <h1 class="country--nofound__heading">404</h1>
+        <p class="fw-800 country--nofound__message">Ops!!! Sorry, We cannot find the country that you are looking for.
+        </p>
     </div>
 </div>

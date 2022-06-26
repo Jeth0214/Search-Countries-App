@@ -1,0 +1,6 @@
+@use '../utilities/' as *;
+
+.d-grid {
+    display: grid;
+    --gap: 1rem;
+}

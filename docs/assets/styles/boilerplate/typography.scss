@@ -1,0 +1,25 @@
+@use '../utilities/' as *;
+
+// font-weight 
+.fw-300 {
+    font-weight: var(--fw-300)
+}
+
+;
+
+.fw-600 {
+    font-weight: var(--fw-600)
+}
+
+;
+
+.fw-800 {
+    font-weight: var(--fw-800)
+}
+
+;
+
+// font family
+.ff-nunito {
+    font-family: var(--ff-nunito);
+}

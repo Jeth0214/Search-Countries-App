@@ -1,0 +1,20 @@
+@use '../utilities/' as *;
+
+// loading spinner text to separate clearly from spinner
+.loading-text {
+    position: absolute;
+    top: 68% !important;
+    left: 47% !important;
+    transform: translate(-47%, -65%) !important;
+
+    @include breakpoint-up('medium') {
+        top: 60% !important;
+        left: 50% !important;
+        transform: translate(-50%, -60%) !important;
+    }
+
+    p {
+        font-size: rem(20);
+        color: #000;
+    }
+}

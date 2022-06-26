@@ -1,0 +1,9 @@
+<div class="search-box">
+    <input type="search" [formControl]="searchBox" class="form-control box-shadow" id="searchBox"
+        placeholder="Search for a country...">
+    <div class="list-group list-group--dropdown" *ngIf="showList">
+        <a (click)="goToCountryDetails(country.name)" class="list-group-item" *ngFor="let country of countries">
+            {{ country.name }}
+        </a>
+    </div>
+</div>

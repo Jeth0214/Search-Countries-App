@@ -1,0 +1,32 @@
+@use '../utilities/' as *;
+
+.search-filter {
+    margin-bottom: rem(48);
+
+    @include breakpoint-up('medium') {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search {
+        flex-basis: rem(480);
+        margin-bottom: rem(40);
+        position: relative;
+
+        @include breakpoint-up('medium') {
+            margin-bottom: 0;
+        }
+    }
+
+    .filter {
+        position: relative;
+        width: 200px;
+
+        // i {
+        //     position: absolute;
+        //     right: 19px;
+        //     top: 34%;
+        //     background-color: var(--bg-element-color);
+        // }
+    }
+}

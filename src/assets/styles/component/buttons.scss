@@ -1,0 +1,40 @@
+@use '../utilities/' as *;
+
+.btn {
+    background-color: var(--bg-element-color);
+    padding: rem(6) rem(20);
+    border: none;
+    color: var(--light-mode-input);
+    font-size: rem(12);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2ms linear;
+
+    &:hover {
+        background-color: var(--bg-body-color);
+    }
+
+    .icon-right {
+        margin-left: rem(62);
+    }
+
+    .icon-left {
+        margin-left: rem(12);
+        margin-right: rem(5);
+    }
+}
+
+.btn+.btn {
+    margin-left: rem(10);
+    margin-bottom: rem(10);
+}
+
+.btn-lg {
+    padding: rem(18) rem(20);
+    font-size: rem(15);
+}
+
+.btn-md {
+    font-size: rem(16);
+    padding: rem(10) rem(32) rem(10) rem(10);
+}

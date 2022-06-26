@@ -1,26 +1,37 @@
 <div class="container">
 
-    <app-search-filter (filter)="filterByRegion($event)"></app-search-filter>
+    <app-search-filter (filter)="filterByRegion($event)" color="#fff"></app-search-filter>
 
-    <div class="row">
-        <div class="col-md-3" *ngFor="let country of countries">
+
+    <div class="d-flex cards">
+        <!-- spinner -->
+        <ng-container *ngIf="!countries">
+            <ngx-spinner bdColor="var(--bg-element-color)" size="medium" color="#000" type="ball-spin"
+                [fullScreen]="false">
+                <p>Loading Countries...</p>
+            </ngx-spinner>
+        </ng-container>
+        <!-- end of spinner -->
+
+        <div class="card box-shadow" *ngFor="let country of countries">
             <a (click)="goToCountry(country)">
-                <div class="card">
-                    <img data-src="country.flags.png" [src]="country.flags.png" class="card-img-top"
-                        [alt]="country.name">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ country.name }}</h5>
-                        <p class="card-text">
-                            <span class="fs-5 fw-bolder">Population: </span> {{ country.population | number }}
-                        </p>
-                        <p class="card-text">
-                            <span class="fs-5 fw-bolder">Region: </span> {{ country.region}}
-                        </p>
-                        <p class="card-text">
-                            <span class="fs-5 fw-bolder">Capital: </span> {{ country.capital }}
-                        </p>
-                    </div>
+                <div class="card__image">
+
+                    <img data-src="country.flags.png" [src]="country.flags.png" [alt]="country.name">
                 </div>
+                <div class="card__body">
+                    <h1 class="card__title fw-800">{{ country.name }}</h1>
+                    <p class="card-text fw-300">
+                        <span class="fw-600">Population: </span> {{ country.population | number }}
+                    </p>
+                    <p class="card-text fw-300">
+                        <span class=" fw-600">Region: </span> {{ country.region}}
+                    </p>
+                    <p class="card-text fw-300">
+                        <span class="fw-600">Capital: </span> {{ country.capital }}
+                    </p>
+                </div>
+
             </a>
         </div>
     </div>

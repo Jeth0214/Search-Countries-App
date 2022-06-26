@@ -34,7 +34,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-spinner/animations/ball-spin.css"
             ],
             "scripts": []
           },
@@ -104,7 +105,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/angular-dark-mode/angular-dark-mode.js"
+            ]
           }
         }
       }

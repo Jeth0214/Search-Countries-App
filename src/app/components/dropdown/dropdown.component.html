@@ -4,6 +4,9 @@
     </button>
 
     <ul class="list-group list-group--dropdown" *ngIf="showDropLists">
+        <ng-container *ngIf="region">
+            <li class="list-group-item" (click)="onFilter(null)">All Countries</li>
+        </ng-container>
         <li class="list-group-item" *ngFor="let region of regions" (click)="onFilter(region)">
             {{ region }}
         </li>

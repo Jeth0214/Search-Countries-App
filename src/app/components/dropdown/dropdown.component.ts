@@ -1,23 +1,22 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Country } from 'src/app/models/country';
 
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
 })
-export class DropdownComponent implements OnInit {
-  @Input() regions: string[];
-  @Output() region = new EventEmitter<string>();
-
+export class DropdownComponent {
+  @Input() regions: Country['region'][];
+  @Output() regionEmiiter = new EventEmitter<string>();
+  region: Country['region']
   showDropLists: boolean = false;
-  dropDownTitle = 'Filter By Region'
 
-
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  get dropDownTitle() {
+    return this.region || 'Filter By Region';
   }
+
 
   onDrop() {
     this.showDropLists = !this.showDropLists;
@@ -29,22 +28,10 @@ export class DropdownComponent implements OnInit {
     }, 500);
   }
 
-  onFilter(region) {
-    if (region === 'All Countries') {
-      this.regions.pop();
-      this.dropDownTitle = 'Filter By Region';
-    }
-    else {
-      if (this.regions.indexOf('All Countries') === -1) {
-
-        this.regions.push('All Countries');
-        this.dropDownTitle = region
-      }
-    }
+  onFilter(region: Country['region'] | null) {
+    this.region = region
     this.showDropLists = false;
-    this.region.emit(region)
-
-
+    this.regionEmiiter.emit(region)
   }
 
 }

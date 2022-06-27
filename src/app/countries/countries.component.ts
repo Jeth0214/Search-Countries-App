@@ -32,7 +32,7 @@ export class CountriesComponent implements OnInit {
   }
 
   filterByRegion(region) {
-    if (region === 'All Countries') {
+    if (region == undefined) {
       this.getCountries();
       return;
     }

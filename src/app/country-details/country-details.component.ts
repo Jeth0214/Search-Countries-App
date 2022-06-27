@@ -39,14 +39,12 @@ export class CountryDetailsComponent implements OnInit {
             let bordersFromCounty = this.country[0].borders.join(',');
             this.countriesService.getCountryByAlphaCode(bordersFromCounty).subscribe(borderCountries => {
               this.borders = borderCountries ? borderCountries : [];
-              //console.log(this.borders)
+
             })
           }
         } else {
           this.noFoundCountry = true;
         }
-        console.log(this.noFoundCountry);
-        // console.log(this.country);
       });
     })
   }

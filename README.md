@@ -59,7 +59,6 @@ Fork this repository.
 Run ``npm install``
 After node_modules successfully installed. Run `` ng serve ``.
 
-I learned how to fetch data from the remote api. Also, how to add/install plugin like ngx-spinner and theme swither and implemnted it on my project. Also, I have some extra learing on how to convert figma design into a live site.
 
 ### What I learned
 

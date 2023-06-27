@@ -3,7 +3,7 @@
         <app-search-box></app-search-box>
     </div>
     <div class="filter ">
-        <app-dropdown [regions]="regions" (region)="onFilter($event)"></app-dropdown>
+        <app-dropdown [regions]="regions" (regionEmiiter)="onFilter($event)"></app-dropdown>
     </div>
 
 </div>

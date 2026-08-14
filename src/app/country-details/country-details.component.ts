@@ -54,10 +54,8 @@ export class CountryDetailsComponent implements OnInit {
   }
 
   goToBorderCountry(borderCountry) {
-    console.log(borderCountry)
     this.countriesService.getCountryByAlphaCode(borderCountry).subscribe(country => {
-      console.log(country);
-      this.router.navigate(['/countries', country.name]);
+      this.router.navigate(['/countries', country[0].name]);
     })
   }
 

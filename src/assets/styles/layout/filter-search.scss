@@ -20,7 +20,11 @@
 
     .filter {
         position: relative;
-        width: 200px;
+        width: 100%;
+
+        @include breakpoint-up('medium') {
+            width: 200px;
+        }
 
         // i {
         //     position: absolute;

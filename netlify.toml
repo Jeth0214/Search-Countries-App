@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "dist/search-countries-app"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

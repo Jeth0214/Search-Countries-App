@@ -20,7 +20,6 @@ export class CountriesComponent implements OnInit {
   getCountries() {
     this.spinner.show();
     this.countriesService.getAllCountries().subscribe(data => {
-      console.log(data);
       document.body.scrollTop = document.documentElement.scrollTop = 0;
       this.countries = data;
       this.spinner.hide();

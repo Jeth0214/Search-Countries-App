@@ -2,7 +2,11 @@
 
 .dropdown {
     position: relative;
-    width: rem(200);
+    width: 100%;
+
+    @include breakpoint-up('medium') {
+        width: rem(200);
+    }
 
     .btn {
         width: 100%;
